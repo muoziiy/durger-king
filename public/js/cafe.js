@@ -316,8 +316,8 @@ var Cafe = {
         $(".js-status").removeClass("shown");
     },
     apiRequest: function (method, data, onCallback) {
-        var authData = Telegram.WebApp.initData || "";
-        $.ajax(Cafe.apiUrl, {
+        const authData = Telegram.WebApp.initData || '';
+        $.ajax('/telegram', {
             type: "POST",
             data: $.extend(data, { _auth: authData, method: method }),
             dataType: "json",
